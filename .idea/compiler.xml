@@ -11,6 +11,7 @@
         <module name="08_Spring_Web_MVC" />
         <module name="05_Configuration" />
         <module name="01_Spring_Core" />
+        <module name="09_RestController" />
         <module name="02_Spring_Bean_Life_Cycle" />
         <module name="06_Runtime_Value_Injection" />
         <module name="03_Spring_Di" />
