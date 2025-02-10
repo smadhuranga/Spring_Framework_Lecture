@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>lk.ijse</groupId>
-    <artifactId>09_RestController</artifactId>
+    <artifactId>10_Back_End</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -38,5 +38,4 @@
 
 
     </dependencies>
-
 </project>
