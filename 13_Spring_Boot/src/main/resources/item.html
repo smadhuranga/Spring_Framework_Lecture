@@ -436,11 +436,11 @@
     $.ajax({
       url: "http://localhost:8080/api/v1/customer/getAll",
       success: function (response) {
-        customers = response;
+        customers = response.data;
         $("#customerTable").empty();
         updateCustomerDropdown();
 
-        for (const data of response) {
+        for (const data of customers) {
           $("#customerTable").append(
                   `<tr data-id="${data.id}">
                         ${createCustomerTableRow(data.id, data.name, data.address)}
@@ -590,11 +590,11 @@
     $.ajax({
       url: "http://localhost:8080/api/v1/item/getAll",
       success: function (response) {
-        items = response;
+        items = response.data;
         $("#itemTable").empty();
         updateItemDropdowns();
 
-        for (const data of response) {
+        for (const data of items) {
           $("#itemTable").append(
                   `<tr data-code="${data.id}">
                         ${createItemTableRow(data.id, data.name, data.price, data.qty)}

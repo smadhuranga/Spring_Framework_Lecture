@@ -1,18 +1,24 @@
-package lk.ijse._13_spring_boot.dto;
+package lk.ijse._13_spring_boot.entity;
+
+import jakarta.persistence.*;
 
 import java.util.List;
 
-public class OrderDTO {
+@Entity
+public class Orders {
+    @Id
     private int id;
     private String date;
     private int customerId;
     private double total;
-    private List<OrderDetailDTO> orderDetails;
 
-    public OrderDTO() {
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderDetail> orderDetails;
+
+    public Orders() {
     }
 
-    public OrderDTO(int id, String date, int customerId, double total, List<OrderDetailDTO> orderDetails) {
+    public Orders(int id, String date, int customerId, double total, List<OrderDetail> orderDetails) {
         this.id = id;
         this.date = date;
         this.customerId = customerId;
@@ -52,11 +58,11 @@ public class OrderDTO {
         this.total = total;
     }
 
-    public List<OrderDetailDTO> getOrderDetails() {
+    public List<OrderDetail> getOrderDetails() {
         return orderDetails;
     }
 
-    public void setOrderDetails(List<OrderDetailDTO> orderDetails) {
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
         this.orderDetails = orderDetails;
     }
 }

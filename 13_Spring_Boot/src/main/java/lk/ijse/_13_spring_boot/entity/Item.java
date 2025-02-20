@@ -1,7 +1,9 @@
 package lk.ijse._13_spring_boot.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
+
 @Entity
 public class Item {
     @Id
@@ -9,6 +11,9 @@ public class Item {
     private String name;
     private double price;
     private int qty;
+
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderDetail> orderDetails;
 
     public Item() {
     }
@@ -50,5 +55,15 @@ public class Item {
 
     public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price='" + price + '\'' +
+                ", qty=" + qty +
+                '}';
     }
 }

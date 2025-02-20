@@ -1,40 +1,62 @@
 package lk.ijse._13_spring_boot.entity;
 
+import jakarta.persistence.*;
+
+@Entity
 public class OrderDetail {
-    private int itemId;
-    private int orderId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private int qty;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id", nullable = false)
+    private Orders order;
+
+    @ManyToOne
+    @JoinColumn(name = "item_id", nullable = false)
+    private Item item;
 
     public OrderDetail() {
     }
 
-    public OrderDetail(int itemId, int orderId, int qty) {
-        this.itemId = itemId;
-        this.orderId = orderId;
-        this.qty = qty;
+    public OrderDetail(int id, int quantity, Orders order, Item item) {
+        this.id = id;
+        this.qty = quantity;
+        this.order = order;
+        this.item = item;
     }
 
-    public int getItemId() {
-        return itemId;
+    public int getId() {
+        return id;
     }
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-
-    public int getQty() {
+    public int getQuantity() {
         return qty;
     }
 
-    public void setQty(int qty) {
-        this.qty = qty;
+    public void setQuantity(int quantity) {
+        this.qty = quantity;
+    }
+
+    public Orders getOrder() {
+        return order;
+    }
+
+    public void setOrder(Orders order) {
+        this.order = order;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }
