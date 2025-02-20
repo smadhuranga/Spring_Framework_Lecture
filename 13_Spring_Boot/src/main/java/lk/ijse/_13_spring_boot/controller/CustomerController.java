@@ -27,19 +27,19 @@ public class CustomerController {
        if (res) {
            return new ResponsUtil(201, "Customer Saved", null);
        }
-           return new ResponsUtil(400, "Customer Not Saved", null);
+           return new ResponsUtil(404, "Customer Not Saved", null);
 
     }
 
     @GetMapping("search/{id}")
-    public CustomerDTO getCustomerById(@PathVariable int id) {
+    public ResponsUtil getCustomerById(@PathVariable int id) {
         CustomerDTO customerDTO = customerService.getCustomerById(id);
 
-        if (customerDTO != null) {
-            return customerDTO;
-        } else {
-            return null;
-        }
+      if (customerDTO != null) {
+          return new ResponsUtil(200, "Success", customerDTO);
+      } else {
+          return new ResponsUtil(404, "Customer Not Found", null);
+      }
     }
 
     @PutMapping("update")
@@ -49,17 +49,18 @@ public class CustomerController {
      if (res) {
          return new ResponsUtil(200, "Customer Updated", null);
      } else {
-         return new ResponsUtil(400, "Customer Not Updated", null);
+         return new ResponsUtil(404, "Customer Not Updated", null);
      }
     }
 
     @DeleteMapping("delete/{id}")
-    public Boolean deleteCustomer(@PathVariable int id) {
+    public ResponsUtil deleteCustomer(@PathVariable int id) {
         boolean res = customerService.deleteCustomer(id);
+
         if (res) {
-            return true;
+            return new ResponsUtil(200, "Customer Deleted", null);
         } else {
-            return false;
+            return new ResponsUtil(404, "Customer Not Deleted", null);
         }
     }
 

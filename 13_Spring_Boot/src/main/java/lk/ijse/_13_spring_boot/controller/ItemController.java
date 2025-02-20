@@ -2,6 +2,7 @@ package lk.ijse._13_spring_boot.controller;
 
 import lk.ijse._13_spring_boot.dto.ItemDTO;
 import lk.ijse._13_spring_boot.service.impl.ItemServiceImpl;
+import lk.ijse._13_spring_boot.util.ResponsUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,46 +16,57 @@ public class ItemController {
     private ItemServiceImpl itemService;
 
     @PostMapping(path = "save")
-    public Boolean saveItem(@RequestBody ItemDTO ItemDTO) {
+    public ResponsUtil saveItem(@RequestBody ItemDTO ItemDTO) {
         boolean res = itemService.save(ItemDTO);
-        return res;
+
+        if (res) {
+            return new ResponsUtil(200, "Success", null);
+        } else {
+            return new ResponsUtil(404, "Failed", null);
+        }
     }
 
     @GetMapping("search/{id}")
-    public ItemDTO getItemById(@PathVariable int id) {
+    public ResponsUtil getItemById(@PathVariable int id) {
         ItemDTO ItemDTO = itemService.getItemById(id);
 
         if (ItemDTO != null) {
-            return ItemDTO;
+            return new ResponsUtil(200, "Success", ItemDTO);
         } else {
-            return null;
+            return new ResponsUtil(404, "Failed", null);
         }
     }
 
     @PutMapping("update")
-    public Boolean updateItem(@RequestBody ItemDTO ItemDTO) {
+    public ResponsUtil updateItem(@RequestBody ItemDTO ItemDTO) {
         boolean res = itemService.updateItem(ItemDTO);
 
         if (res) {
-            return true;
+            return new ResponsUtil(200, "Success", null);
         } else {
-            return false;
+            return new ResponsUtil(404, "Failed", null);
         }
     }
 
     @DeleteMapping("delete/{id}")
-    public Boolean deleteItem(@PathVariable int id) {
+    public ResponsUtil deleteItem(@PathVariable int id) {
         boolean res = itemService.deleteItem(id);
+
         if (res) {
-            return true;
+            return new ResponsUtil(200, "Success", null);
         } else {
-            return false;
+            return new ResponsUtil(404, "Failed", null);
         }
     }
 
     @GetMapping("getAll")
-    public List<ItemDTO> getAllItems() {
+    public ResponsUtil getAllItems() {
         List<ItemDTO> allItems = itemService.getAllItems();
-        return allItems;
+
+        if (allItems != null) {
+            return new ResponsUtil(200, "Success", allItems);
+        } else {
+            return new ResponsUtil(404, "Failed", null);
+        }
     }
 }
