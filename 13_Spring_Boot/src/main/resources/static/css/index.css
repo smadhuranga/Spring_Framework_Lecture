@@ -1,0 +1,37 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef5ff 0%, #aabfe1 100%);
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  min-height: 90vh;
+}
+
+.nav-card {
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #4e73df 0%, #224abe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-text {
+  background: linear-gradient(45deg, #1a237e 0%, #4e73df 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
