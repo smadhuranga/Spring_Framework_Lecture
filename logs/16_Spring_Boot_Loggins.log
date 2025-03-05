@@ -1,0 +1,10 @@
+2025-03-05T11:47:12.951+05:30  INFO 2566 --- [16_Spring_Boot_Loggins] [main] l.i._16_spring_boot_loggins.Application  : Starting Application using Java 17.0.10 with PID 2566 (/Users/supunmadhuranga/Documents/AAD/3rdWeek/Spring Framework/16_Spring_Boot_Loggins/target/classes started by supunmadhuranga in /Users/supunmadhuranga/Documents/AAD/3rdWeek/Spring Framework)
+2025-03-05T11:47:12.952+05:30 DEBUG 2566 --- [16_Spring_Boot_Loggins] [main] l.i._16_spring_boot_loggins.Application  : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-05T11:47:12.952+05:30  INFO 2566 --- [16_Spring_Boot_Loggins] [main] l.i._16_spring_boot_loggins.Application  : No active profile set, falling back to 1 default profile: "default"
+2025-03-05T11:47:13.277+05:30  INFO 2566 --- [16_Spring_Boot_Loggins] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-05T11:47:13.283+05:30  INFO 2566 --- [16_Spring_Boot_Loggins] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-05T11:47:13.283+05:30  INFO 2566 --- [16_Spring_Boot_Loggins] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-05T11:47:13.297+05:30  INFO 2566 --- [16_Spring_Boot_Loggins] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-05T11:47:13.297+05:30  INFO 2566 --- [16_Spring_Boot_Loggins] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 327 ms
+2025-03-05T11:47:13.404+05:30  INFO 2566 --- [16_Spring_Boot_Loggins] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-05T11:47:13.408+05:30  INFO 2566 --- [16_Spring_Boot_Loggins] [main] l.i._16_spring_boot_loggins.Application  : Started Application in 0.733 seconds (process running for 1.076)

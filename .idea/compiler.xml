@@ -31,6 +31,16 @@
         </processorPath>
         <module name="_13_Spring_Boot" />
       </profile>
+      <profile name="Annotation profile for 16_Spring_Boot_Loggins" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="_16_Spring_Boot_Loggins" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -38,6 +48,7 @@
       <module name="_13_Spring_Boot" options="-parameters" />
       <module name="_14_Spring_Security" options="-parameters" />
       <module name="_15_Spring_Boot_Bean_Validation" options="-parameters" />
+      <module name="_16_Spring_Boot_Loggins" options="-parameters" />
     </option>
   </component>
 </project>
